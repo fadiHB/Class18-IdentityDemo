@@ -77,26 +77,26 @@ namespace SchoolAPI
             app.UseRouting();
 
             #region check user
-            app.Use(async (context, next) =>
-            {
-                // url: https://localhost:44387/?name=fadi
-                // check if there is a country query with Jordan value,  
-                var remoteIpAddress = context.Request.HttpContext.Connection.RemoteIpAddress.ToString();
-                string user = context.Request.Query["user"];
+            //app.Use(async (context, next) =>
+            //{
+            //    // url: https://localhost:44387/?name=fadi
+            //    // check if there is a user query with Fadi value,  
+            //    var remoteIpAddress = context.Request.HttpContext.Connection.RemoteIpAddress.ToString();
+            //    string user = context.Request.Query["user"];
 
-                if (user == "Fadi")
-                {
-                    // grading Fadi
-                    //await context.Response.WriteAsync(" -----> Welcome Fadi \n");
-                    await next(); // go to the next middleware
+            //    if (user == "Fadi")
+            //    {
+            //        // grading Fadi
+            //        //await context.Response.WriteAsync(" -----> Welcome Fadi \n");
+            //        await next(); // go to the next middleware
 
-                }
-                else
-                {
-                    // Tell that you should be login, then dont go to the next middleware
-                    await context.Response.WriteAsync(" -----> You should be Fadi to continue \n");
-                }
-            });
+            //    }
+            //    else
+            //    {
+            //        // Tell that you should be login, then dont go to the next middleware
+            //        await context.Response.WriteAsync(" -----> You should be Fadi to continue \n");
+            //    }
+            //});
             #endregion
 
             #region multiple pipelines
